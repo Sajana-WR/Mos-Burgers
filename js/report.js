@@ -1,20 +1,22 @@
-function addTot(){ 
+function addTot() {
 
-    let toto=document.getElementById("totalOrders");
-    let totc=document.getElementById("totalCustomers");
+    let toto = document.getElementById("totalOrders");
+    let totc = document.getElementById("totalCustomers");
+    let tots = document.getElementById("totalSales");
 
-    toto.textContent=JSON.parse(localStorage.getItem("order")).length;
-    totc.textContent=JSON.parse(localStorage.getItem("customer")).length;
+    let orders = JSON.parse(localStorage.getItem("order")) || [];
+    let customers = JSON.parse(localStorage.getItem("customer")) || [];
 
+    toto.textContent = orders.length;
+    totc.textContent = customers.length;
 
-    let orders=JSON.parse(localStorage.getItem("order"));
-    let total=0;
+    let total = 0;
+
     orders.forEach(order => {
-        total+=order.Qty*order.price;
+        total += order.Qty * order.price;
     });
 
-    let tots=document.getElementById("totalSales");
-    tots.textContent=total;
+    tots.textContent = total;
 }
 
 function bestSellingItem() {

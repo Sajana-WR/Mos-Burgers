@@ -1,142 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
+
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+        <title>Mos Burgers - Orders</title>
+
+        <!-- Bootstrap CSS -->
+
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+
+        <style>
+
+        /* =========================
+           CAROUSEL
+        ========================= */
+
+        .order-carousel {
+            width: 500px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+
+        .order-carousel img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           ORDER FORM
+        ========================= */
+
+        .order-form {
+            margin-top: 40px;
+        }
+
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+        #tblOrder {
+            min-width: 800px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 576px) {
+
+            .order-carousel {
+                width: 100%;
+            }
+
+
+            .order-carousel img {
+                height: 250px;
+            }
+
+
+            .order-form {
+                margin-top: 30px;
+            }
+
+
+            #tblOrder {
+                min-width: 800px;
+            }
+
+        }
+
+    </style>
+
     </head>
+
     <body>
 
-        <div>
-            <nav class="navbar navbar-expand-lg bg-danger">
-                <div class="container-fluid gap-5">
-                    <a class="navbar-brand" href="/index.html">Mos Burgers
-                        Shop</a>
-                    <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end"
-                        id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="/index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/store.html">Store</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="/customer.html">Customers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="/order.html">Orders</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="/report.html">Reports</a>
-                            </li>
+        <!-- =========================
+         NAVBAR
+    ========================= -->
 
-                        </ul>
-                    </div>
+        <nav class="navbar navbar-expand-lg bg-danger">
+
+            <div class="container-fluid">
+
+                <!-- Brand -->
+
+                <a class="navbar-brand" href="index.html">
+
+                    Mos Burgers Shop
+
+                </a>
+
+                <!-- Mobile button -->
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <!-- Navigation -->
+
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarNav">
+
+                    <ul class="navbar-nav">
+
+                        <!-- Home -->
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="index.html">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <!-- Store -->
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="store.html">
+
+                                Store
+
+                            </a>
+
+                        </li>
+
+                        <!-- Customers -->
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="customer.html">
+
+                                Customers
+
+                            </a>
+
+                        </li>
+
+                        <!-- Orders -->
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="order.html">
+
+                                Orders
+
+                            </a>
+
+                        </li>
+
+                        <!-- Reports -->
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="report.html">
+
+                                Reports
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
                 </div>
-            </nav>
-        </div>
 
-        <div id="carouselExampleControlsNoTouching "
-            class="carousel slide d-flex mx-auto"
+            </div>
+
+        </nav>
+
+        <!-- =========================
+         CAROUSEL
+    ========================= -->
+
+        <div
+            id="carouselExampleControlsNoTouching"
+            class="carousel slide order-carousel"
             data-bs-ride="carousel"
-            data-bs-interval="3000"
-            style="width: 500px;">
+            data-bs-interval="3000">
 
             <div class="carousel-inner">
+
+                <!-- Image 1 -->
+
                 <div class="carousel-item active">
-                    <img src="img/img7.jpg" class="d-block w-100" alt="Image 1">
+
+                    <img
+                        src="img/img7.jpg"
+                        class="d-block w-100"
+                        alt="Food">
+
                 </div>
 
-                <div class="carousel-item">
-                    <img src="img/img9.jpg" class="d-block w-100" alt="Image 2">
-                </div>
+                <!-- Image 2 -->
 
                 <div class="carousel-item">
-                    <img src="img/img10.jpg" class="d-block w-100"
-                        alt="Image 3">
+
+                    <img
+                        src="img/img9.jpg"
+                        class="d-block w-100"
+                        alt="Food">
+
                 </div>
+
+                <!-- Image 3 -->
+
+                <div class="carousel-item">
+
+                    <img
+                        src="img/img10.jpg"
+                        class="d-block w-100"
+                        alt="Food">
+
+                </div>
+
             </div>
 
-            <button class="carousel-control-prev" type="button"
+            <!-- Previous -->
+
+            <button
+                class="carousel-control-prev"
+                type="button"
                 data-bs-target="#carouselExampleControlsNoTouching"
                 data-bs-slide="prev">
+
                 <span class="carousel-control-prev-icon"></span>
+
+                <span class="visually-hidden">
+                    Previous
+                </span>
+
             </button>
 
-            <button class="carousel-control-next" type="button"
+            <!-- Next -->
+
+            <button
+                class="carousel-control-next"
+                type="button"
                 data-bs-target="#carouselExampleControlsNoTouching"
                 data-bs-slide="next">
+
                 <span class="carousel-control-next-icon"></span>
+
+                <span class="visually-hidden">
+                    Next
+                </span>
+
             </button>
 
         </div>
 
+        <!-- =========================
+         SEARCH SECTION
+    ========================= -->
 
-        <div class="container">
-            <div class="row">
-                <td>Search Item</Search></td>
+        <div class="container mt-5">
 
-                <div class="input-group">
-                    <input id="txtCode" type="text" placeholder="name/code/category">
+            <!-- SEARCH ITEM -->
 
-                    <input type="button" value="search" onclick="SearchOrder()">
+            <div class="row g-3 align-items-center">
+
+                <div class="col-12 col-md-4">
+
+                    <label
+                        for="txtCode"
+                        class="form-label fw-bold">
+
+                        Search Item
+
+                    </label>
+
                 </div>
-                
+
+                <div class="col-12 col-md-8">
+
+                    <div class="input-group">
+
+                        <input
+                            id="txtCode"
+                            type="text"
+                            class="form-control"
+                            placeholder="Name / Code / Category">
+
+                        <input
+                            type="button"
+                            class="btn btn-danger"
+                            value="Search"
+                            onclick="SearchOrder()">
+
+                    </div>
+
+                </div>
+
             </div>
 
+            <!-- SEARCH CUSTOMER -->
 
-            <div class="row mt-5">
-                <td>Search Customer</td>
+            <div class="row g-3 align-items-center mt-4">
 
-                <div class="input-group">
-                    <input id="txtId" type="text" placeholder="Customer ID / Contact Number">
-                    <input type="button" value="search" onclick="SearchCustomer()">
+                <div class="col-12 col-md-4">
+
+                    <label
+                        for="txtId"
+                        class="form-label fw-bold">
+
+                        Search Customer
+
+                    </label>
+
+                </div>
+
+                <div class="col-12 col-md-8">
+
+                    <div class="input-group">
+
+                        <input
+                            id="txtId"
+                            type="text"
+                            class="form-control"
+                            placeholder="Customer ID / Contact Number">
+
+                        <input
+                            type="button"
+                            class="btn btn-danger"
+                            value="Search"
+                            onclick="SearchCustomer()">
+
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
 
-        <div class="mt-5 d-flex mx-auto justify-content-center">
-            <input id="txtOid" placeholder="Order id">
-            <input id="txtCusName" type="text" placeholder="Customer Name">
-            <input id="txtItemName" type="text" placeholder="Enter item name">
-            <input id="txtQty" placeholder="Quantity">
-            <input id="txtDis" placeholder="Discount">
-            <input id="txtpri" placeholder="Price">
-            <input id="btnAdd" type="button" value="Add Order" onclick="addOrder()">
-            
+        <!-- =========================
+         ADD ORDER FORM
+    ========================= -->
+
+        <div class="container order-form">
+
+            <div class="row g-3">
+
+                <!-- Order ID -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="txtOid"
+                        type="text"
+                        class="form-control"
+                        placeholder="Order ID">
+
+                </div>
+
+                <!-- Customer Name -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="txtCusName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Customer Name">
+
+                </div>
+
+                <!-- Item Name -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="txtItemName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Item Name">
+
+                </div>
+
+                <!-- Quantity -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="txtQty"
+                        type="number"
+                        class="form-control"
+                        placeholder="Quantity">
+
+                </div>
+
+                <!-- Discount -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="txtDis"
+                        type="text"
+                        class="form-control"
+                        placeholder="Discount">
+
+                </div>
+
+                <!-- Price -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="txtpri"
+                        type="text"
+                        class="form-control"
+                        placeholder="Price">
+
+                </div>
+
+                <!-- Add Order -->
+
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <input
+                        id="btnAdd"
+                        type="button"
+                        class="btn btn-danger w-100"
+                        value="Add Order"
+                        onclick="addOrder()">
+
+                </div>
+
+            </div>
+
         </div>
 
+        <!-- =========================
+         ORDER TABLE
+    ========================= -->
 
-        <div>
-            <table id="tblOrder" class="table table-bordered">
+        <div class="container-fluid mt-5">
 
-            </table>
+            <div class="table-responsive">
+
+                <table
+                    id="tblOrder"
+                    class="table table-bordered table-striped">
+
+                </table>
+
+            </div>
+
         </div>
+
+        <!-- =========================
+         YOUR JAVASCRIPT
+    ========================= -->
 
         <script src="js/order.js"></script>
+
+        <!-- Bootstrap JS -->
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+    </script>
 
-            
     </body>
+
 </html>
