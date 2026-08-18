@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-        <title>Mos Burgers - Customers</title>
+    <title>Mos Burgers - Customers</title>
 
-        <!-- Bootstrap CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous">
 
-        <!-- Custom CSS -->
-        <style>
+    <!-- Bootstrap CSS -->
 
-        /* Customer image */
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+
+    <!-- Custom CSS -->
+
+    <style>
+
+        /* =========================
+           CUSTOMER IMAGE
+        ========================= */
+
         .customer-image {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             object-fit: contain;
         }
 
 
-        /* Table responsive */
+        /* =========================
+           CUSTOMER FORM
+        ========================= */
+
+        .customer-form {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =========================
+           TABLE
+        ========================= */
+
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -36,13 +57,29 @@
         }
 
 
-        /* Keep table readable */
         #tblCus {
             min-width: 600px;
         }
 
 
-        /* Mobile */
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .customer-image {
+                width: 150px;
+                height: 150px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 576px) {
 
             .customer-image {
@@ -56,222 +93,287 @@
 
         }
 
+
+        /* =========================
+           LARGE DESKTOP
+        ========================= */
+
+        @media (min-width: 1400px) {
+
+            .customer-image {
+                width: 200px;
+                height: 200px;
+            }
+
+        }
+
     </style>
 
-    </head>
+</head>
 
-    <body>
 
-        <!-- ================= NAVBAR ================= -->
+<body>
 
-        <nav class="navbar navbar-expand-lg bg-danger">
 
-            <div class="container-fluid">
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-                <!-- Logo / Brand -->
-                <a class="navbar-brand" href="index.html">
-                    Mos Burgers Shop
-                </a>
+    <nav class="navbar navbar-expand-lg bg-danger">
 
-                <!-- Mobile menu button -->
-                <button
-                    class="navbar-toggler"
+        <div class="container-fluid">
+
+
+            <!-- Brand -->
+
+            <a
+                class="navbar-brand"
+                href="index.html">
+
+                Mos Burgers Shop
+
+            </a>
+
+
+            <!-- Mobile menu button -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navigation -->
+
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav">
+
+                <ul class="navbar-nav">
+
+
+                    <!-- Home -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Store -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="store.html">
+
+                            Store
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Customers -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="customer.html">
+
+                            Customers
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Orders -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="order.html">
+
+                            Orders
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Reports -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="report.html">
+
+                            Reports
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         CUSTOMER IMAGE
+    ========================= -->
+
+    <div class="container text-center mt-4">
+
+        <img
+            src="img/img12.jpg"
+            class="customer-image"
+            alt="Customer">
+
+    </div>
+
+
+    <!-- =========================
+         CUSTOMER FORM
+    ========================= -->
+
+    <div class="container customer-form mt-4">
+
+        <div class="row g-3">
+
+
+            <!-- Customer ID -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <input
+                    id="txtid"
+                    type="text"
+                    class="form-control"
+                    placeholder="Customer ID">
+
+            </div>
+
+
+            <!-- Customer Name -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <input
+                    id="txtname"
+                    type="text"
+                    class="form-control"
+                    placeholder="Customer Name">
+
+            </div>
+
+
+            <!-- Customer Phone -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <input
+                    id="txtphone"
+                    type="text"
+                    class="form-control"
+                    placeholder="Customer Phone">
+
+            </div>
+
+
+            <!-- Customer Email -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <input
+                    id="txtemail"
+                    type="email"
+                    class="form-control"
+                    placeholder="Customer Email">
+
+            </div>
+
+
+            <!-- Add Button -->
+
+            <div class="col-12 col-sm-6 col-lg-3">
+
+                <input
                     type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
-
-                <!-- Navigation -->
-                <div
-                    class="collapse navbar-collapse justify-content-end"
-                    id="navbarNav">
-
-                    <ul class="navbar-nav">
-
-                        <!-- Home -->
-                        <li class="nav-item">
-
-                            <a
-                                class="nav-link"
-                                href="index.html">
-
-                                Home
-
-                            </a>
-
-                        </li>
-
-                        <!-- Store -->
-                        <li class="nav-item">
-
-                            <a
-                                class="nav-link"
-                                href="store.html">
-
-                                Store
-
-                            </a>
-
-                        </li>
-
-                        <!-- Customers -->
-                        <li class="nav-item">
-
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="customer.html">
-
-                                Customers
-
-                            </a>
-
-                        </li>
-
-                        <!-- Orders -->
-                        <li class="nav-item">
-
-                            <a
-                                class="nav-link"
-                                href="order.html">
-
-                                Orders
-
-                            </a>
-
-                        </li>
-
-                        <!-- Reports -->
-                        <li class="nav-item">
-
-                            <a
-                                class="nav-link"
-                                href="report.html">
-
-                                Reports
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
+                    id="btnAdd"
+                    value="Add"
+                    onclick="addCustomer()"
+                    class="btn btn-danger w-100">
 
             </div>
 
-        </nav>
-
-        <!-- ================= CUSTOMER IMAGE ================= -->
-
-        <div class="container text-center mt-4">
-
-            <img
-                src="img/img12.jpg"
-                class="customer-image"
-                alt="Customer">
 
         </div>
 
-        <!-- ================= CUSTOMER FORM ================= -->
+    </div>
 
-        <div class="container mt-4">
 
-            <div class="row g-3">
+    <!-- =========================
+         CUSTOMER TABLE
+    ========================= -->
 
-                <!-- Customer ID -->
-                <div class="col-12 col-md-6 col-lg-3">
+    <div class="container-fluid mt-5">
 
-                    <input
-                        id="txtid"
-                        type="text"
-                        class="form-control"
-                        placeholder="Customer ID">
+        <div class="table-responsive">
 
-                </div>
+            <table
+                id="tblCus"
+                class="table table-bordered table-striped">
 
-                <!-- Customer Name -->
-                <div class="col-12 col-md-6 col-lg-3">
-
-                    <input
-                        id="txtname"
-                        type="text"
-                        class="form-control"
-                        placeholder="Customer Name">
-
-                </div>
-
-                <!-- Customer Phone -->
-                <div class="col-12 col-md-6 col-lg-3">
-
-                    <input
-                        id="txtphone"
-                        type="text"
-                        class="form-control"
-                        placeholder="Customer Phone">
-
-                </div>
-
-                <!-- Customer Email -->
-                <div class="col-12 col-md-6 col-lg-3">
-
-                    <input
-                        id="txtemail"
-                        type="email"
-                        class="form-control"
-                        placeholder="Customer Email">
-
-                </div>
-
-                <!-- Add Button -->
-                <div class="col-12 col-md-6 col-lg-3">
-
-                    <input
-                        type="button"
-                        id="btnAdd"
-                        value="Add"
-                        onclick="addCustomer()"
-                        class="btn btn-danger w-100">
-
-                </div>
-
-            </div>
+            </table>
 
         </div>
 
-        <!-- ================= CUSTOMER TABLE ================= -->
+    </div>
 
-        <div class="container-fluid mt-5">
 
-            <div class="table-responsive">
+    <!-- =========================
+         CUSTOMER JAVASCRIPT
+    ========================= -->
 
-                <table
-                    id="tblCus"
-                    class="table table-bordered table-striped">
+    <script src="js/customer.js"></script>
 
-                </table>
 
-            </div>
+    <!-- Bootstrap JS -->
 
-        </div>
-
-        <!-- ================= JAVASCRIPT ================= -->
-
-        <script src="js/customer.js"></script>
-
-        <!-- Bootstrap JS -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous">
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
     </script>
 
-    </body>
+
+</body>
 
 </html>

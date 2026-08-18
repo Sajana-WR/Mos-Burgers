@@ -1,87 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container-fluate">
 
-            <h1 class="text-center bg-danger p-4 text-black">
-                MOS Burgers Dashboard
-            </h1>
+<head>
 
-            <div class="row">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MOS Burgers Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <style>
+
+        /* =========================
+           DASHBOARD TITLE
+        ========================= */
+
+        .dashboard-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+        }
+
+
+        /* =========================
+           IMAGE SECTION
+        ========================= */
+
+        .food-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+
+        /* Laptop */
+        @media (min-width: 992px) {
+
+            .food-image {
+                height: 350px;
+            }
+
+        }
+
+
+        /* Large desktop */
+        @media (min-width: 1400px) {
+
+            .food-image {
+                height: 400px;
+            }
+
+        }
+
+
+        /* Mobile */
+        @media (max-width: 576px) {
+
+            .food-image {
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         DASHBOARD TITLE
+    ========================= -->
+
+    <div class="container-fluid p-0">
+
+        <h1 class="dashboard-title text-center bg-danger p-4 text-black m-0">
+
+            MOS Burgers Dashboard
+
+        </h1>
+
+    </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar navbar-expand-lg bg-light">
+
+        <div class="container-fluid">
+
+            <!-- Brand -->
+
+            <a class="navbar-brand"
+                href="index.html">
+
+                Mos Burgers Shop
+
+            </a>
+
+
+            <!-- Mobile menu -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navigation -->
+
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <!-- Home -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Store -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="store.html">
+
+                            Store
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Customers -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="customer.html">
+
+                            Customers
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Orders -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="order.html">
+
+                            Orders
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Reports -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="report.html">
+
+                            Reports
+
+                        </a>
+
+                    </li>
+
+                </ul>
 
             </div>
 
         </div>
 
-
-        <div>
-            <nav class="navbar navbar-expand-lg bg-gradient">
-                <div class="container-fluid gap-5">
-                    <a class="navbar-brand" href="/index.html">Mos Burgers Shop</a>
-                    <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="store.html">Store</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="customer.html">Customers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="order.html">Orders</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="report.html">Reports</a>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+    </nav>
 
 
-       
-            <div class="container-fluid d-flex justify-content-center col-sm-12 col-md-12 col-lg-12">
+    <!-- =========================
+         FOOD IMAGES
+    ========================= -->
 
-                
-                <tr>
-                    <td class="img1 m-5 p-5"><img src="img/img2.jpg" width="100"></td>
-                    <td><img src="img/img1.jpg" width="100"></img></td>
-                    <td><img src="img/img3.jpg" width="100" alt=""></td>
+    <div class="container-fluid mt-4">
 
-                
-                </tr>
+        <div class="row g-4">
+
+
+            <!-- Image 1 -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <img
+                    src="img/img2.jpg"
+                    class="food-image"
+                    alt="Mos Burgers food">
 
             </div>
 
 
+            <!-- Image 2 -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <img
+                    src="img/img1.jpg"
+                    class="food-image"
+                    alt="Mos Burgers food">
+
+            </div>
 
 
+            <!-- Image 3 -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <img
+                    src="img/img3.jpg"
+                    class="food-image"
+                    alt="Mos Burgers food">
+
+            </div>
 
 
-            <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
-    </body>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         BOOTSTRAP JS
+    ========================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
+
+</body>
+
 </html>
